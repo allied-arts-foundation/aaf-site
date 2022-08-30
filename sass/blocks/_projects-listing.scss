@@ -1,0 +1,35 @@
+.projects__listing {
+  text-decoration: none;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  background: var(--color-primary);
+  justify-items: center;
+  box-shadow: 0 5px 10px var(--color-dark);
+  outline: 3px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects__listing:hover {
+  box-shadow: 0 5px 10px var(--color-light);
+}
+
+.projects__listing picture {
+  background-color: var(--color-black);
+  width: 100%;
+  display: flex;
+  margin: 0;
+}
+
+.projects__listing picture img {
+
+  margin: auto auto;
+}
+
+.projects__title {
+  color: var(--color-white);
+  font-weight: 600;
+  text-align: center;
+  margin-top: auto;
+}

@@ -1,0 +1,7 @@
+{% set jpg = resize_image(path = path, width = width, height = height, op = op, format = "jpg") %}
+{% set webp = resize_image(path = path, width = width, height = height, op = op, format = "webp") %}
+
+<picture class="page__content-picture">
+  <source srcset="{{ webp.url }}" type="image/webp"/>
+  <img alt="{{ alt }}" src="{{ jpg.url }}"/>
+</picture>

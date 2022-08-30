@@ -1,0 +1,22 @@
+.student__past-winners {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student__past-winners a {
+  text-decoration: none;
+}
+
+.student__past-winners h3 {
+  margin: 0;
+  border: 2px solid var(--color-dark);
+  color: var(--color-primary);
+  width: fit-content;
+  transition: all 0.4s ease-in-out;
+}
+
+.student__past-winners h3:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

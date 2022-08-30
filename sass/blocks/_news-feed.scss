@@ -1,0 +1,39 @@
+.newsfeed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.newsfeed__item {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+  background-color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.newsfeed__item:hover {
+  background-color: var(--color-dark);
+}
+
+.newsfeed__text {
+  color: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.newsfeed__date {
+  font-style: italic;
+}
+
+.newsfeed__title {
+  margin: 0;
+}
+
+.newsfeed__description {
+  grid-column: -1/1;
+}

@@ -1,0 +1,29 @@
+.project__links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.project__links a {
+  font-weight: 600;
+  font-size: 1.4rem;
+  transition: all 0.4s ease-in-out;
+  white-space: nowrap;
+}
+
+.project__links a:hover {
+  fill: var(--color-light);
+  color: var(--color-light);
+}
+
+.project__sponsorship {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.project__sponsorship svg {
+  height: 3rem;
+}

@@ -1,0 +1,19 @@
+{% set max_items = 3%}
+
+<section class="latest-news">
+  <h2>Our latest news:</h2>
+  {% set newsfeed = get_section(path = "news/_index.md") %}
+  {% for newsItem in newsfeed.pages | slice(end = max_items) %}
+    {% set featured_image = resize_image(path = newsItem.extra.featured_image.src, width = 128, height = 128) %}
+    <div class="latest-news-item">
+      <img src="{{ featured_image.url }}" alt="{{ newsItem.extra.featured_image.alt }}"/>
+      <div >
+        <h3>{{ newsItem.title }}</h3>
+        <p>{{ newsItem.description }}
+          <a href="{{ newsItem.permalink }}">…more</a>
+        </p>
+
+      </div>
+    </div>
+  {% endfor %}
+</section>

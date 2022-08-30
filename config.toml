@@ -1,0 +1,142 @@
+# The URL the site will be built for
+base_url = "https://alliedartsfoundation.com"
+description = "The Allied Arts Foundation is a Seattle-based non-profit that supports arts and culture in the Pacific Northwest through student art awards, artist grants, fiscal sponsorship, and cultural space advocacy."
+minify_html = true
+title = "Allied Arts Foundation"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+  # Whether to do syntax highlighting
+  # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+  highlight_code = false
+
+[extra]
+
+  #Sponsors
+  sponsors = [
+    "4Culture",
+    "Amazon",
+    "ArtsWA / National Endowment for the Arts",
+    "Glaser Foundation",
+    "Kalman & Ida Wolens Foundation",
+    "Lucky Seven Foundation",
+    "Piroshky Piroshky",
+    "Raven Foundation",
+    "Seattle Office of Arts & Culture",
+    "Windermere Foundation",
+    "Wyman Youth Trust",
+  ]
+
+  [extra.featured_image]
+    alt = "digiatl painting of artist and Seattle skyline"
+    src = "/static/assets/aaf-hero.png"
+
+  # Main Navigation
+  [[extra.main_nav]]
+    href = "/"
+    label = "Home"
+
+  [[extra.main_nav]]
+    href = "/programs"
+    label = "Programs & Awards"
+
+    [[extra.main_nav.submenu]]
+      href = "/programs/student-awards"
+      label = "Student Awards"
+
+    [[extra.main_nav.submenu]]
+      href = "/programs/artist-grant"
+      label = "Artist Grant"
+
+    [[extra.main_nav.submenu]]
+      href = "/programs/poetry-prize"
+      label = "Poetry Prize"
+
+  [[extra.main_nav]]
+    href = "/sponsorship"
+    label = "Fiscal Sponsorship"
+
+    [[extra.main_nav.submenu]]
+      href = "/sponsorship/sponsored-projects"
+      label = "Sponsored Projects"
+
+    [[extra.main_nav.submenu]]
+      href = "/sponsorship#guidelines-application"
+      label = "Apply for Sponsorship"
+
+  [[extra.main_nav]]
+    href = "/about"
+    label = "About"
+
+  [extra.donate]
+    href = "https://secure.givelively.org/donate/allied-arts-foundation-seattle/allied-arts-foundation"
+    label = "Donate"
+
+  [[extra.social]]
+    facebook = "#"
+
+  [[extra.social]]
+    linkedin = "#"
+
+
+  [[extra.social]]
+    youtube = "#"
+
+
+  [[extra.social]]
+    facebook = "#"
+
+
+  # Footer Navigation
+  [[extra.footer_nav]]
+    href = "/"
+    label = "Home"
+
+  [[extra.footer_nav]]
+    href = "/programs"
+    label = "Programs & Awards"
+
+    [[extra.footer_nav.submenu]]
+      href = "/"
+      label = "Robert J. Block Awards"
+
+    [[extra.footer_nav.submenu]]
+      href = "/"
+      label = "Artist Award"
+
+    [[extra.footer_nav.submenu]]
+      href = "/"
+      label = "Poetry Prize"
+
+  [[extra.footer_nav]]
+    href = "/sponsorship"
+    label = "Fiscal Sponsorship"
+
+    [[extra.footer_nav.submenu]]
+      href = "/"
+      label = "Sponsored Projects"
+
+    [[extra.footer_nav.submenu]]
+      href = "/sponsorship#guidelines-application"
+      label = "Apply for Sponsorship"
+
+  [[extra.footer_nav]]
+    href = "/about"
+    label = "About"
+
+  [[extra.footer_nav]]
+    href = "/news"
+    label = "News"
+
+  [[extra.footer_nav]]
+    href = "/about#contact"
+    label = "Contact"
+
+  [[extra.footer_nav]]
+    href = "/https://secure.givelively.org/donate/allied-arts-foundation-seattle/allied-arts-foundation"
+    label = "Donate"

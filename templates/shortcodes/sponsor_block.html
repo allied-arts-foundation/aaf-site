@@ -1,0 +1,24 @@
+{% if page.extra.sponsors %}
+  {% set sponsors = page.extra.sponsors %}
+{% elif section.extra.sponsors %}
+  {% set sponsors = section.extra.sponsors %}
+{% endif %}
+
+{% if sponsors %}
+
+  <ul role="list" class="sponsor-block">
+    {% for sponsor in sponsors | sort(attribute="name") %}
+      {% set webp = resize_image(path=sponsor.img, height=height, op="fit_height", format="webp") %}
+      {% set jpg = resize_image(path=sponsor.img, height=height, op="fit_height", format="jpg") %}
+      <li>
+        <a class="sponsor-block__item" href="{{ sponsor.url }}">
+          <picture>
+            <source srcset="{{ webp.url }}" type="image/webp"/>
+            <img src="{{ jpg.url }}" alt="{{ sponsor.name }}"/>
+          </picture>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endif %}

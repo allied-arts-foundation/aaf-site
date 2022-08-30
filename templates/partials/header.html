@@ -1,0 +1,30 @@
+<header>
+  <div class="wrapper header">
+    <a class="header__logo" href="/" aria-label="Home">
+      {% include "icons/logo.html" %}
+    </a>
+    <burger-menu max-width="700">
+      <nav aria-label="primary">
+        <ul role="list" class="header__menu" >
+          {% for link in config.extra.main_nav %}
+            <li {% if link.submenu %} data-dropdown="true" aria-haspopup="true" {% endif %}>
+              <a href="{{link.href}}">{{link.label}}</a>
+              {% if link.submenu %}
+                <ul role="list" class="header__submenu" aria-label="submenu">
+                  {% for sublink in link.submenu %}
+                    <li>
+                      <a href="{{sublink.href}}">{{sublink.label}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+          <li>
+            <a class="button" href="{{config.extra.donate.href}}" target="_blank">{{config.extra.donate.label}}</a>
+          </li>
+        </ul>
+      </nav>
+    </burger-menu>
+  </div>
+</header>

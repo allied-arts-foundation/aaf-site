@@ -1,0 +1,38 @@
+{% extends "page.html" %}
+
+{% block extra_styles %}
+  {{ macros::inline_styles(path="/styles/artist-grant.css")}}
+{% endblock %}
+
+{% block extra_toc %}
+  <a href="#past-awards">Past Awards</a>
+{% endblock %}
+
+{% block extra_content %}
+  <h2 id="past-awards">Past Awards</h2>
+
+  <div class="past-awards flow">
+    {% for item in section.pages | reverse %}
+      <a href="{{ item.path }}">
+        <div class="past-awards__text flow">
+          <h3>
+            {{ item.title }}
+          </h3>
+          <p>
+            {{ item.description }}
+          </p>
+        </div>
+
+        {% if item.extra.featured_image %}
+          {% set webp = resize_image(path = item.extra.featured_image.src, height = 140, op = "fit_height", format = "webp") %}
+          {% set jpg = resize_image(path = item.extra.featured_image.src, height = 140, op = "fit_height", format = "jpg") %}
+          <picture class="grants__past-award-img">
+            <source srcset="{{ webp.url }}" type="image/webp"/>
+            <img src="{{ jpg.url }}" alt="{{ item.extra.featured_image.alt }}"/>
+          </picture>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% import "macros.html" as macros %}
+
+{% if section %}
+  {% set page = section %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% include "partials/head.html" %}
+    {{ macros::inline_styles(path="/styles/site.css")}}
+    {% block styles %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="site-wrap">
+      {% include "partials/header.html" %}
+
+      <main tabindex="-1" id="main-content">
+        {% block content%}{% endblock content %}
+      </main>
+
+      {% include "partials/footer.html" %}
+    </div>
+
+    <script src="/js/burger-menu.js" type="module" defer></script>
+    {% if config.mode == "serve" %}
+      <script>
+        console.log({{ __tera_context }})
+      </script>
+    {% endif %}
+  </body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ macros::inline_styles(path="/styles/page.css")}}
+  {{ macros::inline_styles(path="/styles/sponsored-project.css")}}
+{% endblock %}
+
+{% block content %}
+  <div class="page__heading">
+    <div class="wrapper">
+      <h1>{{page.title}}</h1>
+
+      {% if page.extra.image_path %}
+        {% set jpg = resize_image(path = page.extra.image_path, width = 950, height = 300, op = "fit", format = "jpg") %}
+        {% set webp = resize_image(path = page.extra.image_path, width = 950, height = 300, op = "fit", format = "webp") %}
+        <picture>
+          <source srcset="{{ webp.url }}" type="image/webp"/>
+          <img alt="{{ page.title }}" src="{{ jpg.url }}"/>
+        </picture>
+      {% endif %}
+      <div class="project__links">
+        {% if page.extra.website_url %}
+          <a href="{{page.extra.website_url}}">Project Website</a>
+        {% endif %}
+        {% if page.extra.donation_url %}
+          <a class="button" href="{{page.extra.donation_url}}">Donate</a>
+        {% endif %}
+        {% if page.extra.social %}
+          {{macros::social_links(social=page.extra.social)}}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wrapper flow page__content">
+    {{page.content | safe}}
+
+    <div class="project__sponsorship flow">
+      <p>A Fiscally Sponsored Project of the Allied Arts Foundation</p>
+      {% include "icons/logo.html" %}
+    </div>
+  </div>
+
+{% endblock %}

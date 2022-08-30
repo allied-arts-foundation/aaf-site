@@ -1,0 +1,21 @@
+.board_listing {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+  font-size: 0.8em;
+}
+
+.board_listing__name {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.board_listing__title {
+  font-style: italic;
+}
+
+@media only screen and (min-width: 850px) {
+  .board_listing {
+    grid-template-columns: 1fr 1fr;
+  }
+}

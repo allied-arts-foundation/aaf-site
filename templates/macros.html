@@ -1,0 +1,44 @@
+{% macro inline_styles(path) %}
+  {% if config.mode == "serve" %}
+    <link rel="stylesheet" href="{{path}}">
+  {% else %}
+    <style type="text/css">
+      {{load_data(path=path) | safe}}
+    </style>
+  {% endif %}
+{% endmacro %}
+
+{% macro social_links(social) %}
+
+  <div class="social__links">
+    {% for item in social %}
+      {% if item.facebook %}
+        <a href="{{item.facebook}}">{% include "icons/facebook.html" %}</a>
+      {% endif %}
+      {% if item.youtube %}
+        <a href="{{item.youtube}}">{% include "icons/youtube.html" %}</a>
+      {% endif %}
+      {% if item.instagram %}
+        <a href="{{item.instagram}}">{% include "icons/instagram.html" %}</a>
+      {% endif %}
+      {% if item.twitter %}
+        <a href="{{item.twitter}}">{% include "icons/twitter.html" %}</a>
+      {% endif %}
+      {% if item.linkedin %}
+        <a href="{{item.linkedin}}">{% include "icons/linkedin.html" %}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endmacro %}
+
+{% macro cta(data) %}
+  <article class="cta__item">
+    <h3>{{ data.header }}</h3>
+    <p class="cta__subhead">{{ data.subhead }}</p>
+    {% set cta_image = resize_image(path = data.image, width = 400, height = 300, op = "fit_width") %}
+    <img class="cta__image" src="{{ cta_image.url }}" alt="{{ data.altText }}"/>
+    <p>{{ data.text }}</p>
+    <a class="button" href="{{ data.buttonLink }}">{{ data.buttonText }}</a>
+  </article>
+{% endmacro %}

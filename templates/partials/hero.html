@@ -1,0 +1,9 @@
+{% set hero = section.extra.hero %}
+{% set hero_image = resize_image(path = hero.src, width = 600, height = 600) %}
+<section class="hero">
+  <img class="hero__img" src="{{ hero_image.url }}" alt="{{ hero.alt }}"/>
+  <div class="hero__text">
+    <h1 class="hero__title">{{ hero.title }}</h1>
+    <h3 class="hero__subtitle">{{ hero.subtitle }}</h3>
+  </div>
+</section>

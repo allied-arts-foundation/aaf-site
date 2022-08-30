@@ -1,0 +1,46 @@
+{% set bod = page.extra.bod %}
+{% set positions = bod | group_by(attribute = "position") %}
+
+<ul role="list" class="board_listing">
+  {% for member in positions["President"] | sort(attribute = "last") %}
+    <li>
+      <div>
+        <span class="board_listing__name">
+          {{ member.first }}
+          {{ member.last }}
+        </span>, {{ member.position }}
+      </div>
+      <div class="board_listing__title">
+        {{ member.title }}
+      </div>
+    </li>
+  {% endfor %}
+
+  {% for member in positions["Vice President & Interim Secretary/Treasurer"] | sort(attribute = "last") %}
+    <li>
+      <div>
+        <span class="board_listing__name">
+          {{ member.first }}
+          {{ member.last }}
+        </span>, {{ member.position }}
+      </div>
+      <div class="board_listing__title">
+        {{ member.title }}
+      </div>
+    </li>
+  {% endfor %}
+
+  {% for member in positions["Member at Large"] | sort(attribute = "last") %}
+    <li>
+      <div>
+        <span class="board_listing__name">
+          {{ member.first }}
+          {{ member.last }}
+        </span>
+      </div>
+      <div class="board_listing__title">
+        {{ member.title }}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

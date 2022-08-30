@@ -1,0 +1,19 @@
+.cta__item {
+  background: var(--color-dark);
+  padding: 1rem;
+  color: var(--color-white);
+  display: grid;
+  grid-template-rows: min-content min-content min-content min-content auto;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.cta__subhead {
+  font-family: var(--font-display);
+  color: var(--color-light);
+}
+
+.cta__item .button {
+  height: fit-content;
+  align-self: flex-end;
+}

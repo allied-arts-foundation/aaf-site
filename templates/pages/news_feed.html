@@ -1,0 +1,30 @@
+{% extends "page.html" %}
+{% block extra_styles %}
+  {{ macros::inline_styles(path="/styles/news-feed.css")}}
+{% endblock %}
+
+{% block extra_content %}
+  <section class="newsfeed">
+    {% for item in section.pages %}
+      <a href="{{item.path}}" class="newsfeed__item">
+        {% if item.extra.featured_image %}
+          {% set jpg = resize_image(path = item.extra.featured_image.src, width = 400, height = 300, op = "fit", format = "jpg") %}
+          {% set webp = resize_image(path = item.extra.featured_image.src, width = 400, height = 300, op = "fit", format = "webp") %}
+
+          <picture class="newsfeed__picture">
+            <source srcset="{{ webp.url }}" type="image/webp"/>
+            <img alt="{{ item.extra.featured_image.alt }}" src="{{ jpg.url }}"/>
+          </picture>
+
+        {% endif %}
+        <div class="newsfeed__text">
+          <h3 class="newsfeed__title">{{item.title}}</h3>
+          <div class="newsfeed__date">{{item.date}}</div>
+          <div class="newsfeed__description">{{item.description}}</div>
+        </div>
+
+      </a>
+    {% endfor %}
+  </section>
+
+{% endblock %}

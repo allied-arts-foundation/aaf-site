@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ macros::inline_styles(path="/styles/page.css")}}
+  {% block extra_styles %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="page__heading">
+    <div class="wrapper">
+      <h1>{{page.title}}</h1>
+      {% if page.extra.featured_image %}
+        {% set jpg = resize_image(path = page.extra.featured_image.src, width = 950, height = 300, op = "fit", format = "jpg") %}
+        {% set webp = resize_image(path = page.extra.featured_image.src, width = 950, height = 300, op = "fit", format = "webp") %}
+
+        <picture>
+          <source srcset="{{ webp.url }}" type="image/webp"/>
+          <img alt="{{ page.extra.featured_image.alt }}" src="{{ jpg.url }}"/>
+        </picture>
+
+      {% endif %}
+      <nav>
+        <ul role="list" class="page__toc">
+          {% for item in page.toc %}
+            <li>
+              <a href="#{{ item.id }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+          {% block extra_toc %}{% endblock %}
+        </ul>
+      </nav>
+      {% if page.date %}
+        <div class="page__date">{{page.date | date(format="%B %e, %Y")}}</div>
+
+      {% endif %}
+      <section>
+        {{page.description}}
+      </section>
+    </div>
+  </div>
+
+  <div class="wrapper flow page__content">
+    {{page.content | safe}}
+    {% block extra_content %}{% endblock %}
+  </div>
+
+{% endblock %}

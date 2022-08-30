@@ -1,0 +1,45 @@
+{% set footer_nav = config.extra.footer_nav %}
+{% set sponsors = config.extra.sponsors %}
+
+<footer class="site-footer">
+  <div class="wrapper footer__content">
+    <nav class="footer__item">
+      <h3>Navigation</h3>
+      <ul class="footer__nav" role="list">
+        {% for nav_link in footer_nav %}
+          <li>
+            <a href="{{ nav_link.href }}">
+              {{ nav_link.label }}
+            </a>
+            {% if nav_link.submenu %}
+              <ul role="list" aria-label="submenu">
+                {% for submenu_item in nav_link.submenu %}
+                  <li>
+                    <a href="{{ submenu_item.href }}">{{ submenu_item.label }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <nav class="footer__item">
+      <h3>Social</h3>
+      {{macros::social_links(social=config.extra.social)}}
+    </nav>
+    <div class="footer__item">
+      <h3>AAF is Supported By</h3>
+      <ul role="list" class="footer__sponsor-list">
+        {% for sponsor in config.extra.sponsors %}
+          <li>{{ sponsor }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <small class="footer__contact">
+    3518 Fremont Ave N #521 | Seattle, WA 98104 <br>
+    info@alliedartsfoundation.org
+  </small>
+  <small class="footer__copyright">© {{ now() | date(format="%Y") }} Allied Arts Foundation</small>
+</footer>

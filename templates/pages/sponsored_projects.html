@@ -1,0 +1,32 @@
+{% extends "page.html" %}
+
+{% block extra_styles %}
+  {{ macros::inline_styles(path="/styles/sponsored-projects.css")}}
+{% endblock %}
+
+{% block extra_content %}
+
+  <section class="projects__list">
+    {% for item in section.pages %}
+      {% set meta_data = get_image_metadata(path = item.extra.image_path) %}
+      {% if meta_data.width < meta_data.height * 5 / 2 %}
+        {% set webp = resize_image(path = item.extra.image_path, height = 200, op = "fit_height", format = "webp", quality = 85) %}
+        {% set jpg = resize_image(path = item.extra.image_path, height = 200, op = "fit_height", format = "jpg", quality = 85) %}
+      {% else %}
+        {% set webp = resize_image(path = item.extra.image_path, width = 500, height = 200, format = "webp", quality = 85) %}
+        {% set jpg = resize_image(path = item.extra.image_path, width = 500, height = 200, format = "jpg", quality = 85) %}
+      {% endif %}
+
+      <a target="_blank" class="projects__listing" href={{ item.path }}>
+        <picture>
+          <source srcset="{{ webp.url }}" type="image/webp"/>
+          <img src="{{ jpg.url }}" alt=""/>
+        </picture>
+        <h3 class="projects__title">{{ item.title }}</h3>
+      </a>
+
+    {% endfor %}
+
+  </section>
+
+{% endblock %}

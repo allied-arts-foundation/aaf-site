@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block styles %}{{ macros::inline_styles(path="/styles/home.css")}}
+{% endblock %}
+
+{% block content %}
+  <div class="homepage">
+    {% include "partials/hero.html" %}
+    <section class="homepage__items">
+      {% for item in section.extra.ctas %}
+        {{ macros::cta(data=item) }}
+      {% endfor %}
+      {% include "partials/newsletter_form.html" %}
+      {% include "partials/latest_news.html" %}
+    </section>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+
+{% block extra_styles %}
+  {{ macros::inline_styles(path="/styles/student-awards.css")}}
+{% endblock %}
+
+{% block extra_toc %}
+  <a href="#past-winners">Past Winners</a>
+{% endblock %}
+
+{% block extra_content %}
+  <h2 id="past-winners">Past Winners</h2>
+
+  <div class="student__past-winners">
+    {% for page in section.pages | reverse %}
+      <a  href="{{ page.path }}" >
+        <h3 class="button">
+          {{ page.title }}
+        </h3>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}
