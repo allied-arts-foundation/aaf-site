@@ -12,8 +12,8 @@
           {% set webp = resize_image(path = item.extra.featured_image.src, width = 400, height = 300, op = "fit", format = "webp") %}
 
           <picture class="newsfeed__picture">
-            <source srcset="{{ webp.url }}" type="image/webp"/>
-            <img alt="{{ item.extra.featured_image.alt }}" src="{{ jpg.url }}"/>
+            <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
+            <img alt="{{ item.extra.featured_image.alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
           </picture>
 
         {% endif %}

@@ -15,8 +15,8 @@
         {% set webp = resize_image(path = page.extra.featured_image.src, width = 950, height = 300, op = "fit", format = "webp") %}
 
         <picture>
-          <source srcset="{{ webp.url }}" type="image/webp"/>
-          <img alt="{{ page.extra.featured_image.alt }}" src="{{ jpg.url }}"/>
+          <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
+          <img alt="{{ page.extra.featured_image.alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
         </picture>
 
       {% endif %}

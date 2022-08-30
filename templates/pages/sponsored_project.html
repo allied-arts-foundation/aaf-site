@@ -14,8 +14,8 @@
         {% set jpg = resize_image(path = page.extra.image_path, width = 950, height = 300, op = "fit", format = "jpg") %}
         {% set webp = resize_image(path = page.extra.image_path, width = 950, height = 300, op = "fit", format = "webp") %}
         <picture>
-          <source srcset="{{ webp.url }}" type="image/webp"/>
-          <img alt="{{ page.title }}" src="{{ jpg.url }}"/>
+          <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
+          <img alt="{{ page.title }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
         </picture>
       {% endif %}
       <div class="project__links">

@@ -27,8 +27,8 @@
           {% set webp = resize_image(path = item.extra.featured_image.src, height = 140, op = "fit_height", format = "webp") %}
           {% set jpg = resize_image(path = item.extra.featured_image.src, height = 140, op = "fit_height", format = "jpg") %}
           <picture class="grants__past-award-img">
-            <source srcset="{{ webp.url }}" type="image/webp"/>
-            <img src="{{ jpg.url }}" alt="{{ item.extra.featured_image.alt }}"/>
+            <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
+            <img src="{{ jpg.static_path | replace(from="static", to="") }}" alt="{{ item.extra.featured_image.alt }}"/>
           </picture>
         {% endif %}
       </a>

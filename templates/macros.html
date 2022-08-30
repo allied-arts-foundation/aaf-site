@@ -37,7 +37,7 @@
     <h3>{{ data.header }}</h3>
     <p class="cta__subhead">{{ data.subhead }}</p>
     {% set cta_image = resize_image(path = data.image, width = 400, height = 300, op = "fit_width") %}
-    <img class="cta__image" src="{{ cta_image.url }}" alt="{{ data.altText }}"/>
+    <img class="cta__image" src="{{ cta_image.static_path | replace(from="static", to="") }}" alt="{{ data.altText }}"/>
     <p>{{ data.text }}</p>
     <a class="button" href="{{ data.buttonLink }}">{{ data.buttonText }}</a>
   </article>
