@@ -61,4 +61,4 @@ Download our current [Sponsorship Application Guidelines](/assets/sponsorship/AA
 ## Our Sponsored Artists
 
 Allied Arts Foundation proudly sponsors over 40 artists and arts organizations.
-See them all at our Artists & Organizations page.
+See them all at our [Artists & Organizations page](/sponsorship/sponsored-projects).
