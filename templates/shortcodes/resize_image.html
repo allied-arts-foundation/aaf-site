@@ -3,5 +3,5 @@
 
 <picture class="page__content-picture">
   <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
-  <img alt="{{ alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
+  <img width="{{jpg.width}}" height="{{jpg.height}}" alt="{{ alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
 </picture>

@@ -14,7 +14,7 @@
         <a class="sponsor-block__item" href="{{ sponsor.url }}">
           <picture>
             <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
-            <img src="{{ jpg.static_path | replace(from="static", to="") }}" alt="{{ sponsor.name }}"/>
+            <img width="{{jpg.width}}" height="{{jpg.height}}" src="{{ jpg.static_path | replace(from="static", to="") }}" alt="{{ sponsor.name }}"/>
           </picture>
         </a>
       </li>

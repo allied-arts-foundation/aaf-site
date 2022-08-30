@@ -16,7 +16,7 @@
 
         <picture>
           <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
-          <img alt="{{ page.extra.featured_image.alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
+          <img width="{{jpg.width}}" height="{{jpg.height}}" alt="{{ page.extra.featured_image.alt }}" src="{{ jpg.static_path | replace(from="static", to="") }}"/>
         </picture>
 
       {% endif %}
