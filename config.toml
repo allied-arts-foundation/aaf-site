@@ -78,18 +78,18 @@ build_search_index = false
     label = "Donate"
 
   [[extra.social]]
-    facebook = "#"
+    facebook = "https://www.facebook.com/alliedartsfdn"
 
   [[extra.social]]
-    linkedin = "#"
-
-
-  [[extra.social]]
-    youtube = "#"
+    linkedin = "https://www.linkedin.com/company/allied-arts-foundation"
 
 
   [[extra.social]]
-    facebook = "#"
+    youtube = "https://www.youtube.com/channel/UCeEMrYK0vwxL3G2oEmsoPrQ"
+
+
+  [[extra.social]]
+    twitter = "https://www.twitter.com/AlliedArtsFdn/"
 
 
   # Footer Navigation
