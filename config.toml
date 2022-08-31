@@ -102,15 +102,15 @@ build_search_index = false
     label = "Programs & Awards"
 
     [[extra.footer_nav.submenu]]
-      href = "/"
-      label = "Robert J. Block Awards"
+      href = "/programs/student-awards"
+      label = "High School Art Awards"
 
     [[extra.footer_nav.submenu]]
-      href = "/"
+      href = "/programs/artist-grant"
       label = "Artist Award"
 
     [[extra.footer_nav.submenu]]
-      href = "/"
+      href = "/programs/poetry-prize"
       label = "Poetry Prize"
 
   [[extra.footer_nav]]
@@ -118,7 +118,7 @@ build_search_index = false
     label = "Fiscal Sponsorship"
 
     [[extra.footer_nav.submenu]]
-      href = "/"
+      href = "/sponsorship/sponsored-projects"
       label = "Sponsored Projects"
 
     [[extra.footer_nav.submenu]]
