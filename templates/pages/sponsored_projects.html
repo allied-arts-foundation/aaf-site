@@ -20,7 +20,7 @@
       <a target="_blank" class="projects__listing" href={{ item.path }}>
         <picture>
           <source srcset="{{ webp.static_path | replace(from="static", to="") }}" type="image/webp"/>
-          <img src="{{ jpg.static_path | replace(from="static", to="") }}" alt=""/>
+          <img width="{{jpg.width}}" height="{{jpg.height}}" src="{{ jpg.static_path | replace(from="static", to="") }}" alt=""/>
         </picture>
         <h3 class="projects__title">{{ item.title }}</h3>
       </a>
