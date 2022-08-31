@@ -21,6 +21,10 @@
   margin-right: auto;
 }
 
+.page__content-picture img {
+  object-fit: scale-down;
+}
+
 @media only screen and (min-width: 650px) {
   .page__content-picture {
     margin-left: 1rem;
