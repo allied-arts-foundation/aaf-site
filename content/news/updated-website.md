@@ -1,7 +1,7 @@
 +++
 title = "AAF Launches New Website"
 date = 2022-08-31
-description = "Allied Arts Foundation Launched a new version of this site with a cleaner design and imporved performance."
+description = "Allied Arts Foundation Launched a new version of this site with a cleaner design and improved performance."
 
 [extra]
 [extra.featured_image]
