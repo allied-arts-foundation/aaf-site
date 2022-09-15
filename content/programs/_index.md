@@ -9,7 +9,7 @@ og_image = "/static/assets/programs/student-awards/student-banner2.png"
 
 The Robert J. Block Awards for Excellence in the Arts, Honoring and recognizing artists in each of Seattle’s 16 public high schools.
 
-[Learn more about our high school awards](/programs/block-awards)
+[Learn more about our high school awards](/programs/student-awards)
 
 ## Artist Grant
 
