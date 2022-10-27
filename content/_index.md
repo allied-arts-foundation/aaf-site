@@ -31,7 +31,7 @@ header = "2022 Artist Grant"
 subhead = "Craft Arts"
 image = "/assets/programs/artist-grant/crafts-banner.png"
 altText = "stylized painting of craft tools"
-text = "Congratulations to the winners of our 2022 artist award for craft arts!"
+text = "Congratulations to the winners of our 2022 artist award"
 buttonText = "More Info"
 buttonLink = "/programs/artist-grant/2022"
 +++

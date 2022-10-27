@@ -1,5 +1,5 @@
 +++
-title = "'Arts Alive' — Allied Arts Foundation's 2022 Celebraiton"
+title = "'Arts Alive' — Allied Arts Foundation's 2022 Celebration"
 date = 2022-12-22
 description = "Join Us! Saturday, December 3rd 2022 at Pier 56"
 
